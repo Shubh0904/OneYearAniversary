@@ -37,7 +37,6 @@
       cursor: none;
     }
 
-    /* ── Cursor ── */
     .cursor {
       width: 13px; height: 13px;
       background: var(--pink-deep);
@@ -64,7 +63,6 @@
 
     #particle-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
 
-    /* ════ NAV ════ */
     nav {
       position: fixed; top: 1.1rem; left: 50%; transform: translateX(-50%);
       display: flex; gap: .2rem;
@@ -90,7 +88,6 @@
       color: var(--white);
     }
 
-    /* ════ HERO ════ */
     #hero {
       position: relative; z-index: 1;
       min-height: 100vh;
@@ -103,11 +100,7 @@
         radial-gradient(ellipse at 55% 85%, rgba(244,114,168,.22) 0%, transparent 44%),
         var(--bg);
     }
-    .blob {
-      position: absolute; border-radius: 50%;
-      filter: blur(70px); pointer-events: none;
-      animation: blobFloat 9s ease-in-out infinite;
-    }
+    .blob { position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none; animation: blobFloat 9s ease-in-out infinite; }
     .blob1 { width:380px;height:380px;background:rgba(249,168,201,.4);top:-100px;left:-100px;animation-delay:0s; }
     .blob2 { width:300px;height:300px;background:rgba(232,160,32,.2);bottom:-70px;right:-80px;animation-delay:3.5s; }
     .blob3 { width:200px;height:200px;background:rgba(244,114,168,.25);top:35%;left:60%;animation-delay:1.8s; }
@@ -131,113 +124,32 @@
       animation: popIn .85s .15s cubic-bezier(.34,1.56,.64,1) both;
       filter: drop-shadow(0 4px 18px rgba(249,168,201,.4));
     }
-    .hero-sub {
-      margin: 1rem 0 2rem;
-      font-size: clamp(1rem,2.8vw,1.35rem);
-      font-weight: 700; color: var(--text-soft);
-      animation: popIn .85s .3s cubic-bezier(.34,1.56,.64,1) both;
-    }
-    .hero-names-row {
-      display: flex; align-items: center; gap: 1.1rem;
-      animation: popIn .9s .45s cubic-bezier(.34,1.56,.64,1) both;
-    }
-    .hero-name {
-      font-family: 'Fredoka One', cursive;
-      font-size: clamp(2rem,6vw,3.8rem); color: var(--text);
-      background: var(--white);
-      border: 2px solid rgba(244,114,168,.3);
-      border-radius: 18px; padding: .4rem 1.4rem;
-      box-shadow: 0 4px 20px rgba(249,168,201,.3);
-    }
-    .hero-amp {
-      font-family: 'Pacifico', cursive;
-      font-size: clamp(1.8rem,5vw,3rem);
-      background: linear-gradient(135deg, var(--gold), var(--gold-lt));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      animation: pulse 2.2s infinite;
-    }
-    .hero-date {
-      margin-top: 1.8rem;
-      font-weight: 800; font-size: .88rem;
-      letter-spacing: .14em; color: var(--muted); text-transform: uppercase;
-      animation: popIn .9s .6s cubic-bezier(.34,1.56,.64,1) both;
-    }
-    .scroll-hint {
-      position: absolute; bottom: 2rem;
-      display: flex; flex-direction: column; align-items: center; gap: .5rem;
-      color: var(--muted); font-size: .75rem; font-weight: 800;
-      letter-spacing: .1em; text-transform: uppercase;
-      animation: fadeUp 1s 1.1s ease both;
-    }
-    .scroll-arrow {
-      width: 20px; height: 20px;
-      border-right: 2.5px solid var(--gold);
-      border-bottom: 2.5px solid var(--gold);
-      transform: rotate(45deg); animation: bounceDown 1.4s infinite;
-    }
+    .hero-sub { margin: 1rem 0 2rem; font-size: clamp(1rem,2.8vw,1.35rem); font-weight: 700; color: var(--text-soft); animation: popIn .85s .3s cubic-bezier(.34,1.56,.64,1) both; }
+    .hero-names-row { display: flex; align-items: center; gap: 1.1rem; animation: popIn .9s .45s cubic-bezier(.34,1.56,.64,1) both; }
+    .hero-name { font-family: 'Fredoka One', cursive; font-size: clamp(2rem,6vw,3.8rem); color: var(--text); background: var(--white); border: 2px solid rgba(244,114,168,.3); border-radius: 18px; padding: .4rem 1.4rem; box-shadow: 0 4px 20px rgba(249,168,201,.3); }
+    .hero-amp { font-family: 'Pacifico', cursive; font-size: clamp(1.8rem,5vw,3rem); background: linear-gradient(135deg, var(--gold), var(--gold-lt)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: pulse 2.2s infinite; }
+    .hero-date { margin-top: 1.8rem; font-weight: 800; font-size: .88rem; letter-spacing: .14em; color: var(--muted); text-transform: uppercase; animation: popIn .9s .6s cubic-bezier(.34,1.56,.64,1) both; }
+    .scroll-hint { position: absolute; bottom: 2rem; display: flex; flex-direction: column; align-items: center; gap: .5rem; color: var(--muted); font-size: .75rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; animation: fadeUp 1s 1.1s ease both; }
+    .scroll-arrow { width: 20px; height: 20px; border-right: 2.5px solid var(--gold); border-bottom: 2.5px solid var(--gold); transform: rotate(45deg); animation: bounceDown 1.4s infinite; }
 
-    /* ════ SHARED ════ */
     section { position: relative; z-index: 1; }
     .sec-wrap { text-align: center; padding: 100px 2rem; }
-    .section-tag {
-      display: inline-block;
-      font-family: 'Fredoka One', cursive;
-      font-size: .9rem; letter-spacing: .07em; color: var(--white);
-      background: linear-gradient(135deg, var(--gold), var(--gold-lt));
-      border-radius: 50px; padding: .28rem 1.1rem; margin-bottom: 1rem;
-      box-shadow: 0 4px 16px rgba(232,160,32,.3);
-    }
-    .section-title {
-      font-family: 'Fredoka One', cursive;
-      font-size: clamp(2rem,5.5vw,3.5rem);
-      color: var(--text); margin-bottom: 1rem; line-height: 1.2;
-    }
-    .section-title .pop {
-      background: linear-gradient(135deg, var(--pink-deep), var(--gold));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .squiggle {
-      width: 90px; height: 10px; margin: 0 auto 3.2rem;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 10'%3E%3Cpath d='M0,5 Q11,0 22,5 Q33,10 44,5 Q55,0 66,5 Q77,10 90,5' fill='none' stroke='%23e8a020' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") center/cover no-repeat;
-    }
+    .section-tag { display: inline-block; font-family: 'Fredoka One', cursive; font-size: .9rem; letter-spacing: .07em; color: var(--white); background: linear-gradient(135deg, var(--gold), var(--gold-lt)); border-radius: 50px; padding: .28rem 1.1rem; margin-bottom: 1rem; box-shadow: 0 4px 16px rgba(232,160,32,.3); }
+    .section-title { font-family: 'Fredoka One', cursive; font-size: clamp(2rem,5.5vw,3.5rem); color: var(--text); margin-bottom: 1rem; line-height: 1.2; }
+    .section-title .pop { background: linear-gradient(135deg, var(--pink-deep), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .squiggle { width: 90px; height: 10px; margin: 0 auto 3.2rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 10'%3E%3Cpath d='M0,5 Q11,0 22,5 Q33,10 44,5 Q55,0 66,5 Q77,10 90,5' fill='none' stroke='%23e8a020' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E") center/cover no-repeat; }
 
-    /* ════ INTRO ════ */
     #intro { background: var(--bg2); }
-    .intro-card {
-      max-width: 680px; margin: 0 auto;
-      background: var(--card);
-      border: 1.5px solid rgba(244,114,168,.2);
-      border-radius: 28px; padding: 3rem 3.5rem;
-      position: relative; overflow: hidden;
-      box-shadow: 0 12px 40px rgba(249,168,201,.2);
-    }
-    .intro-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--pink-deep), var(--gold), var(--pink));
-      border-radius: 28px 28px 0 0;
-    }
-    .intro-card::after {
-      content: '"'; font-family: 'Pacifico', cursive;
-      font-size: 9rem; line-height: 1; color: var(--pink); opacity: .08;
-      position: absolute; top: -1rem; left: 1rem; pointer-events: none;
-    }
+    .intro-card { max-width: 680px; margin: 0 auto; background: var(--card); border: 1.5px solid rgba(244,114,168,.2); border-radius: 28px; padding: 3rem 3.5rem; position: relative; overflow: hidden; box-shadow: 0 12px 40px rgba(249,168,201,.2); }
+    .intro-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--pink-deep), var(--gold), var(--pink)); border-radius: 28px 28px 0 0; }
+    .intro-card::after { content: '"'; font-family: 'Pacifico', cursive; font-size: 9rem; line-height: 1; color: var(--pink); opacity: .08; position: absolute; top: -1rem; left: 1rem; pointer-events: none; }
     .intro-text { font-size: clamp(1.05rem,2.5vw,1.28rem); line-height: 1.95; color: var(--text-soft); font-weight: 600; }
-    .intro-sig {
-      margin-top: 1.6rem; font-family: 'Pacifico', cursive; font-size: 1.5rem;
-      background: linear-gradient(135deg, var(--pink-deep), var(--gold));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
+    .intro-sig { margin-top: 1.6rem; font-family: 'Pacifico', cursive; font-size: 1.5rem; background: linear-gradient(135deg, var(--pink-deep), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-    /* ════ FUN FACTS — TOOLTIP STYLE ════ */
     #funfacts { background: var(--bg3); }
     .facts-hint { color: var(--muted); font-size: .9rem; font-weight: 700; margin-bottom: 2.5rem; }
+    .facts-grid { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.6rem; }
 
-    .facts-grid {
-      max-width: 1040px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.6rem;
-    }
-
-    /* Each fact card: animated entrance + hover tooltip */
     .fact-card {
       position: relative;
       background: var(--card);
@@ -251,15 +163,8 @@
       cursor: default;
       overflow: visible;
     }
-    .fact-card.visible {
-      opacity: 1; transform: translateY(0) scale(1);
-    }
-    .fact-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 18px 45px rgba(249,168,201,.32);
-      border-color: var(--gold);
-      z-index: 10;
-    }
+    .fact-card.visible { opacity: 1; transform: translateY(0) scale(1); }
+    .fact-card:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 18px 45px rgba(249,168,201,.32); border-color: var(--gold); z-index: 10; }
     .fact-card:nth-child(1){transition-delay:.04s}
     .fact-card:nth-child(2){transition-delay:.10s}
     .fact-card:nth-child(3){transition-delay:.16s}
@@ -267,33 +172,17 @@
     .fact-card:nth-child(5){transition-delay:.28s}
     .fact-card:nth-child(6){transition-delay:.34s}
 
-    .fact-icon-svg {
-      width: 42px; height: 42px; margin-bottom: .65rem;
-      animation: wiggle 3s ease-in-out infinite;
-      fill: none; stroke: var(--pink-deep); stroke-width: 2;
-      stroke-linecap: round; stroke-linejoin: round;
-      display: block; margin-left: auto; margin-right: auto;
-    }
+    .fact-icon-svg { width: 42px; height: 42px; margin-bottom: .65rem; animation: wiggle 3s ease-in-out infinite; fill: none; stroke: var(--pink-deep); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; display: block; margin-left: auto; margin-right: auto; }
     .fact-card:nth-child(2) .fact-icon-svg { animation-delay:.3s; stroke: var(--gold); }
     .fact-card:nth-child(3) .fact-icon-svg { animation-delay:.6s; }
     .fact-card:nth-child(4) .fact-icon-svg { animation-delay:.9s; stroke: var(--gold); }
     .fact-card:nth-child(5) .fact-icon-svg { animation-delay:.5s; }
     .fact-card:nth-child(6) .fact-icon-svg { animation-delay:.8s; stroke: var(--gold); }
 
-    .fact-number {
-      font-family: 'Fredoka One', cursive;
-      font-size: clamp(2.5rem,5vw,3.4rem);
-      background: linear-gradient(135deg, var(--pink-deep), var(--gold));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      line-height: 1; margin-bottom: .32rem;
-    }
-    .fact-label {
-      font-size: .82rem; font-weight: 800; color: var(--text);
-      text-transform: uppercase; letter-spacing: .1em; margin-bottom: .3rem;
-    }
+    .fact-number { font-family: 'Fredoka One', cursive; font-size: clamp(2.5rem,5vw,3.4rem); background: linear-gradient(135deg, var(--pink-deep), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin-bottom: .32rem; }
+    .fact-label { font-size: .82rem; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: .1em; margin-bottom: .3rem; }
     .fact-desc { font-size: .78rem; color: var(--muted); line-height: 1.5; font-weight: 600; }
 
-    /* ── Tooltip popup ── */
     .fact-tooltip {
       position: absolute;
       bottom: calc(100% + 14px);
@@ -310,49 +199,17 @@
       transition: opacity .22s ease, transform .22s cubic-bezier(.34,1.56,.64,1);
       z-index: 100;
     }
-    /* Arrow pointing down */
-    .fact-tooltip::after {
-      content: '';
-      position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
-      width: 14px; height: 8px;
-      background: var(--white);
-      clip-path: polygon(0 0, 100% 0, 50% 100%);
-      border-bottom: 1.5px solid rgba(232,160,32,.35);
-    }
-    .fact-card:hover .fact-tooltip {
-      opacity: 1;
-      transform: translateX(-50%) scale(1);
-    }
-    .tooltip-title {
-      font-family: 'Fredoka One', cursive;
-      font-size: .95rem; color: var(--gold-dark);
-      margin-bottom: .4rem; letter-spacing: .04em;
-    }
-    .tooltip-body {
-      font-size: .8rem; color: var(--text-soft);
-      line-height: 1.65; font-weight: 600;
-    }
-    .tooltip-divider {
-      width: 36px; height: 2px; margin: .5rem auto;
-      background: linear-gradient(90deg, var(--pink-deep), var(--gold));
-      border-radius: 2px;
-    }
+    .fact-tooltip::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 14px; height: 8px; background: var(--white); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+    .fact-card:hover .fact-tooltip { opacity: 1; transform: translateX(-50%) scale(1); }
+    .tooltip-title { font-family: 'Fredoka One', cursive; font-size: .95rem; color: var(--gold-dark); margin-bottom: .4rem; letter-spacing: .04em; }
+    .tooltip-body { font-size: .8rem; color: var(--text-soft); line-height: 1.65; font-weight: 600; }
+    .tooltip-divider { width: 36px; height: 2px; margin: .5rem auto; background: linear-gradient(90deg, var(--pink-deep), var(--gold)); border-radius: 2px; }
 
-    /* ════ TIMELINE ════ */
     #timeline { background: var(--bg2); }
     .timeline-outer { max-width: 960px; margin: 0 auto; position: relative; }
-    .timeline-spine {
-      position: absolute; left: 50%; top: 0; bottom: 0; width: 3px;
-      background: linear-gradient(180deg, var(--pink-deep), var(--gold), var(--pink));
-      transform: translateX(-50%); border-radius: 3px;
-      box-shadow: 0 0 14px rgba(249,168,201,.35);
-    }
+    .timeline-spine { position: absolute; left: 50%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, var(--pink-deep), var(--gold), var(--pink)); transform: translateX(-50%); border-radius: 3px; box-shadow: 0 0 14px rgba(249,168,201,.35); }
 
-    .month-card {
-      display: flex; align-items: flex-start; gap: 2rem; margin-bottom: 5rem;
-      text-align: left; opacity: 0; transform: translateY(40px);
-      transition: opacity .65s ease, transform .65s ease;
-    }
+    .month-card { display: flex; align-items: flex-start; gap: 2rem; margin-bottom: 5rem; text-align: left; opacity: 0; transform: translateY(40px); transition: opacity .65s ease, transform .65s ease; }
     .month-card.visible { opacity: 1; transform: none; }
     .month-card:nth-child(odd)  { flex-direction: row; }
     .month-card:nth-child(even) { flex-direction: row-reverse; }
@@ -361,98 +218,35 @@
 
     .month-media { flex: 0 0 46%; position: relative; }
 
-    /* ── Photo hyperlink ── */
-    .photo-link {
-      display: block; position: relative;
-      border-radius: 20px; overflow: hidden;
-      text-decoration: none; cursor: none;
-      box-shadow: 0 10px 36px rgba(249,168,201,.25);
-      transition: box-shadow .35s ease, transform .35s ease;
-    }
-    .photo-link:hover {
-      box-shadow: 0 0 0 3px var(--gold), 0 18px 50px rgba(232,160,32,.28);
-      transform: scale(1.03) rotate(-1deg);
-    }
-    .photo-link .play-overlay {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(249,168,201,.0);
-      transition: background .3s;
-    }
+    .photo-link { display: block; position: relative; border-radius: 20px; overflow: hidden; text-decoration: none; cursor: none; box-shadow: 0 10px 36px rgba(249,168,201,.25); transition: box-shadow .35s ease, transform .35s ease; }
+    .photo-link:hover { box-shadow: 0 0 0 3px var(--gold), 0 18px 50px rgba(232,160,32,.28); transform: scale(1.03) rotate(-1deg); }
+    .photo-link .play-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(249,168,201,.0); transition: background .3s; }
     .photo-link:hover .play-overlay { background: rgba(232,160,32,.15); }
-    .play-btn {
-      width: 54px; height: 54px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-lt));
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0; transform: scale(.7);
-      transition: opacity .3s, transform .3s;
-      box-shadow: 0 4px 20px rgba(232,160,32,.5);
-    }
+    .play-btn { width: 54px; height: 54px; background: linear-gradient(135deg, var(--gold), var(--gold-lt)); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(.7); transition: opacity .3s, transform .3s; box-shadow: 0 4px 20px rgba(232,160,32,.5); }
     .photo-link:hover .play-btn { opacity: 1; transform: scale(1); }
-    .play-triangle {
-      width: 0; height: 0;
-      border-style: solid;
-      border-width: 9px 0 9px 18px;
-      border-color: transparent transparent transparent var(--white);
-      margin-left: 4px;
-    }
+    .play-triangle { width: 0; height: 0; border-style: solid; border-width: 9px 0 9px 18px; border-color: transparent transparent transparent var(--white); margin-left: 4px; }
 
-    /* now-playing pill */
-    .now-playing {
-      display: none; align-items: center; gap: .5rem;
-      margin-top: .6rem;
-      background: var(--gold-pale);
-      border: 1.5px solid rgba(232,160,32,.35);
-      border-radius: 50px; padding: .28rem 1rem;
-      font-family: 'Fredoka One', cursive;
-      font-size: .78rem; color: var(--gold-dark);
-    }
+    .now-playing { display: none; align-items: center; gap: .5rem; margin-top: .6rem; background: var(--gold-pale); border: 1.5px solid rgba(232,160,32,.35); border-radius: 50px; padding: .28rem 1rem; font-family: 'Fredoka One', cursive; font-size: .78rem; color: var(--gold-dark); }
     .now-playing.active { display: flex; animation: popIn .4s cubic-bezier(.34,1.56,.64,1) both; }
     .np-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; animation: npPulse 1s infinite; flex-shrink: 0; }
     .np-text { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .np-stop {
-      background: none; border: none; cursor: none;
-      font-family: 'Fredoka One', cursive; font-size: .72rem;
-      color: var(--gold-dark); text-decoration: underline;
-      padding: 0; transition: color .2s; flex-shrink: 0;
-    }
+    .np-stop { background: none; border: none; cursor: none; font-family: 'Fredoka One', cursive; font-size: .72rem; color: var(--gold-dark); text-decoration: underline; padding: 0; transition: color .2s; flex-shrink: 0; }
     .np-stop:hover { color: var(--pink-deep); }
 
-    .month-photo {
-      width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
-      border: 2.5px solid rgba(249,168,201,.3);
-    }
-    .month-placeholder-inner {
-      width: 100%; aspect-ratio: 4/3;
-      background: linear-gradient(135deg, var(--pink-pale), var(--gold-pale));
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: .6rem; color: var(--muted); font-size: .88rem; font-weight: 700;
-    }
+    /* ── THE KEY FIX: img tag styles ── */
+    .month-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+
+    .month-placeholder-inner { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--pink-pale), var(--gold-pale)); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .6rem; color: var(--muted); font-size: .88rem; font-weight: 700; }
     .cam-icon { width: 48px; height: 42px; position: relative; }
     .cam-icon::before { content: ''; position: absolute; inset: 7px 0 0; border: 2.5px solid var(--pink-muted); border-radius: 6px; }
     .cam-icon::after  { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 16px; height: 10px; border: 2.5px solid var(--pink-muted); border-bottom: none; border-radius: 4px 4px 0 0; }
     .cam-lens { position: absolute; top: 55%; left: 50%; transform: translate(-50%,-50%); width: 16px; height: 16px; border: 2.5px solid var(--pink-muted); border-radius: 50%; }
 
-    .month-badge {
-      position: absolute; top: -13px; z-index: 2;
-      background: linear-gradient(135deg, var(--gold), var(--gold-lt));
-      color: var(--white); font-family: 'Fredoka One', cursive;
-      font-size: .78rem; letter-spacing: .05em;
-      padding: .28rem .9rem; border-radius: 50px;
-      box-shadow: 0 4px 14px rgba(232,160,32,.35);
-    }
+    .month-badge { position: absolute; top: -13px; z-index: 2; background: linear-gradient(135deg, var(--gold), var(--gold-lt)); color: var(--white); font-family: 'Fredoka One', cursive; font-size: .78rem; letter-spacing: .05em; padding: .28rem .9rem; border-radius: 50px; box-shadow: 0 4px 14px rgba(232,160,32,.35); }
     .month-card:nth-child(odd)  .month-badge { left: 1rem; }
     .month-card:nth-child(even) .month-badge { right: 1rem; }
 
-    .month-dot {
-      position: absolute; left: 50%; top: 1.6rem; transform: translateX(-50%);
-      width: 22px; height: 22px;
-      background: linear-gradient(135deg, var(--pink-deep), var(--gold));
-      border: 3px solid var(--bg2); border-radius: 50%;
-      box-shadow: 0 0 0 5px rgba(249,168,201,.25), 0 0 20px rgba(249,168,201,.4);
-      z-index: 2; animation: dotGlow 2.4s infinite;
-    }
+    .month-dot { position: absolute; left: 50%; top: 1.6rem; transform: translateX(-50%); width: 22px; height: 22px; background: linear-gradient(135deg, var(--pink-deep), var(--gold)); border: 3px solid var(--bg2); border-radius: 50%; box-shadow: 0 0 0 5px rgba(249,168,201,.25), 0 0 20px rgba(249,168,201,.4); z-index: 2; animation: dotGlow 2.4s infinite; }
     .month-text { flex: 0 0 46%; }
     .month-num   { font-size: .74rem; letter-spacing: .16em; color: var(--gold-dark); font-weight: 800; text-transform: uppercase; margin-bottom: .3rem; }
     .month-name  { font-family: 'Fredoka One', cursive; font-size: clamp(1.4rem,3vw,2rem); color: var(--text); margin-bottom: .75rem; }
@@ -462,25 +256,12 @@
     .tag-song    { background: var(--pink-pale); border: 1.5px solid rgba(244,114,168,.3); color: var(--pink-deep); }
     .tag-mood    { background: var(--gold-pale);  border: 1.5px solid rgba(232,160,32,.3); color: var(--gold-dark); }
 
-    /* ════ LETTERS ════ */
     #letters { background: var(--bg3); }
     .letters-wrap { max-width: 740px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
-    .letter-card {
-      background: var(--card);
-      border: 1.5px solid rgba(249,168,201,.3);
-      border-radius: 24px; padding: 2.5rem 3rem; text-align: left;
-      position: relative; overflow: hidden;
-      box-shadow: 0 6px 28px rgba(249,168,201,.14);
-      opacity: 0; transform: translateX(-28px);
-      transition: opacity .65s ease, transform .65s ease;
-    }
+    .letter-card { background: var(--card); border: 1.5px solid rgba(249,168,201,.3); border-radius: 24px; padding: 2.5rem 3rem; text-align: left; position: relative; overflow: hidden; box-shadow: 0 6px 28px rgba(249,168,201,.14); opacity: 0; transform: translateX(-28px); transition: opacity .65s ease, transform .65s ease; }
     .letter-card:nth-child(even) { transform: translateX(28px); }
     .letter-card.visible { opacity: 1; transform: none; }
-    .letter-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--pink-deep), var(--gold), var(--pink));
-      border-radius: 24px 24px 0 0;
-    }
+    .letter-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--pink-deep), var(--gold), var(--pink)); border-radius: 24px 24px 0 0; }
     .letter-deco { position: absolute; bottom: -1.5rem; right: 1.5rem; width: 100px; height: 90px; opacity: .06; pointer-events: none; }
     .letter-deco::before, .letter-deco::after { content: ''; position: absolute; width: 50px; height: 80px; background: var(--pink-deep); border-radius: 50px 50px 0 0; }
     .letter-deco::before { left: 50px; transform: rotate(-45deg); transform-origin: 0 100%; }
@@ -489,35 +270,14 @@
     .letter-body { font-size: 1rem; line-height: 1.92; color: var(--text-soft); font-weight: 600; }
     .letter-sig  { margin-top: 1.3rem; font-family: 'Pacifico', cursive; font-size: 1.5rem; background: linear-gradient(135deg, var(--pink-deep), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-    /* ════ CLOSING ════ */
-    #closing {
-      padding: 140px 2rem 200px; text-align: center; position: relative; z-index: 1;
-      background: radial-gradient(ellipse at center, rgba(249,168,201,.3) 0%, transparent 65%), var(--bg);
-    }
-    .closing-title {
-      font-family: 'Pacifico', cursive;
-      font-size: clamp(2.2rem,7.5vw,6rem);
-      background: linear-gradient(135deg, var(--pink-deep), var(--gold) 55%, var(--pink));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      line-height: 1.2; margin-bottom: 1.2rem;
-      filter: drop-shadow(0 4px 20px rgba(249,168,201,.3));
-    }
+    #closing { padding: 140px 2rem 200px; text-align: center; position: relative; z-index: 1; background: radial-gradient(ellipse at center, rgba(249,168,201,.3) 0%, transparent 65%), var(--bg); }
+    .closing-title { font-family: 'Pacifico', cursive; font-size: clamp(2.2rem,7.5vw,6rem); background: linear-gradient(135deg, var(--pink-deep), var(--gold) 55%, var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2; margin-bottom: 1.2rem; filter: drop-shadow(0 4px 20px rgba(249,168,201,.3)); }
     .closing-sub { font-family: 'Fredoka One', cursive; font-size: clamp(1.2rem,3.5vw,2rem); color: var(--text-soft); margin-bottom: 3rem; }
-    .css-heart {
-      display: inline-block; position: relative;
-      width: 100px; height: 90px;
-      animation: heartBeat 1.5s ease-in-out infinite;
-    }
-    .css-heart::before, .css-heart::after {
-      content: ''; position: absolute;
-      width: 50px; height: 80px;
-      background: linear-gradient(135deg, var(--pink-deep), var(--gold));
-      border-radius: 50px 50px 0 0;
-    }
+    .css-heart { display: inline-block; position: relative; width: 100px; height: 90px; animation: heartBeat 1.5s ease-in-out infinite; }
+    .css-heart::before, .css-heart::after { content: ''; position: absolute; width: 50px; height: 80px; background: linear-gradient(135deg, var(--pink-deep), var(--gold)); border-radius: 50px 50px 0 0; }
     .css-heart::before { left: 50px; transform: rotate(-45deg); transform-origin: 0 100%; }
     .css-heart::after  { left: 0;    transform: rotate(45deg);  transform-origin: 100% 100%; }
 
-    /* ════ KEYFRAMES ════ */
     @keyframes popIn    { from{opacity:0;transform:scale(.72)} to{opacity:1;transform:scale(1)} }
     @keyframes fadeUp   { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none} }
     @keyframes pulse    { 0%,100%{transform:scale(1)} 50%{transform:scale(1.18)} }
@@ -536,14 +296,14 @@
 <canvas id="particle-canvas"></canvas>
 
 <nav>
-  <a href="#hero"     class="active">Home</a>
-  <a href="#intro">   Story</a>
+  <a href="#hero" class="active">Home</a>
+  <a href="#intro">Story</a>
   <a href="#funfacts">Facts</a>
   <a href="#timeline">Journey</a>
-  <a href="#letters"> Letters</a>
+  <a href="#letters">Letters</a>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- HERO -->
 <section id="hero">
   <div class="blob blob1"></div>
   <div class="blob blob2"></div>
@@ -560,45 +320,30 @@
   <div class="scroll-hint"><span>Scroll to Explore</span><div class="scroll-arrow"></div></div>
 </section>
 
-<!-- ═══ INTRO ═══ -->
+<!-- INTRO -->
 <section id="intro">
   <div class="sec-wrap">
     <div class="section-tag">where it began</div>
     <h2 class="section-title">Our <span class="pop">Story</span></h2>
     <div class="squiggle"></div>
     <div class="intro-card">
-      <!-- ✏️ EDIT: Replace this paragraph with your own opening message -->
-      <p class="intro-text">Thank you for being in my life, you make it better every day since the very first day, I am the luckiest lad out there to have caught the prettiest smartest funniest bad bih </p>
+      <p class="intro-text">Thank you for being in my life, you make it better every day since the very first day, I am the luckiest lad out there to have caught the prettiest smartest funniest bad bih</p>
       <p class="intro-sig">— with all my heart</p>
     </div>
   </div>
 </section>
 
-<!-- ═══ FUN FACTS ═══ -->
+<!-- FUN FACTS -->
 <section id="funfacts">
   <div class="sec-wrap">
     <div class="section-tag">by the numbers</div>
     <h2 class="section-title">Our Year in <span class="pop">Facts</span></h2>
     <div class="squiggle"></div>
     <p class="facts-hint">Hover any card to see more</p>
-
     <div class="facts-grid">
 
-      <!--
-        ✏️ EDIT EACH FACT CARD:
-        - data-target = the number to count up to
-        - fact-label  = short title (e.g. "Days Together")
-        - fact-desc   = one-line description under the number
-        - tooltip-title = bold heading inside the tooltip popup
-        - tooltip-body  = the sweet message shown on hover
-      -->
-
       <div class="fact-card">
-        <div class="fact-tooltip">
-          <div class="tooltip-title">Every single day</div>
-          <div class="tooltip-divider"></div>
-          <div class="tooltip-body">Every day with you is better than the one before. Even the weird ones.</div>
-        </div>
+        <div class="fact-tooltip"><div class="tooltip-title">Every single day</div><div class="tooltip-divider"></div><div class="tooltip-body">Every day with you is better than the one before. Even the weird ones.</div></div>
         <svg class="fact-icon-svg" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         <div class="fact-number" data-target="365">0</div>
         <div class="fact-label">Days Together</div>
@@ -606,11 +351,7 @@
       </div>
 
       <div class="fact-card">
-        <div class="fact-tooltip">
-          <div class="tooltip-title">Anywhere with you</div>
-          <div class="tooltip-divider"></div>
-          <div class="tooltip-body">Honestly I would go anywhere if it meant going with you.</div>
-        </div>
+        <div class="fact-tooltip"><div class="tooltip-title">Anywhere with you</div><div class="tooltip-divider"></div><div class="tooltip-body">Honestly I would go anywhere if it meant going with you.</div></div>
         <svg class="fact-icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         <div class="fact-number" data-target="4">0</div>
         <div class="fact-label">Cities Explored</div>
@@ -618,11 +359,7 @@
       </div>
 
       <div class="fact-card">
-        <div class="fact-tooltip">
-          <div class="tooltip-title">Popcorn thief</div>
-          <div class="tooltip-divider"></div>
-          <div class="tooltip-body">You always steal my popcorn. I never actually mind. Not even once.</div>
-        </div>
+        <div class="fact-tooltip"><div class="tooltip-title">Popcorn thief</div><div class="tooltip-divider"></div><div class="tooltip-body">You always steal my popcorn. I never actually mind. Not even once.</div></div>
         <svg class="fact-icon-svg" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
         <div class="fact-number" data-target="47">0</div>
         <div class="fact-label">Movies &amp; Shows</div>
@@ -630,11 +367,7 @@
       </div>
 
       <div class="fact-card">
-        <div class="fact-tooltip">
-          <div class="tooltip-title">Home</div>
-          <div class="tooltip-divider"></div>
-          <div class="tooltip-body">Wherever you are just feels like the right place to be.</div>
-        </div>
+        <div class="fact-tooltip"><div class="tooltip-title">Home</div><div class="tooltip-divider"></div><div class="tooltip-body">Wherever you are just feels like the right place to be.</div></div>
         <svg class="fact-icon-svg" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
         <div class="fact-number" data-target="28">0</div>
         <div class="fact-label">Sleepovers</div>
@@ -642,11 +375,7 @@
       </div>
 
       <div class="fact-card">
-        <div class="fact-tooltip">
-          <div class="tooltip-title">One in a million</div>
-          <div class="tooltip-divider"></div>
-          <div class="tooltip-body">Out of everyone in the world, I got you. I will never stop being grateful.</div>
-        </div>
+        <div class="fact-tooltip"><div class="tooltip-title">One in a million</div><div class="tooltip-divider"></div><div class="tooltip-body">Out of everyone in the world, I got you. I will never stop being grateful.</div></div>
         <svg class="fact-icon-svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         <div class="fact-number" data-target="1">0</div>
         <div class="fact-label">In a Million</div>
@@ -654,11 +383,7 @@
       </div>
 
       <div class="fact-card">
-        <div class="fact-tooltip">
-          <div class="tooltip-title">Truly infinite</div>
-          <div class="tooltip-divider"></div>
-          <div class="tooltip-body">Every day you give me a new reason. I have stopped counting.</div>
-        </div>
+        <div class="fact-tooltip"><div class="tooltip-title">Truly infinite</div><div class="tooltip-divider"></div><div class="tooltip-body">Every day you give me a new reason. I have stopped counting.</div></div>
         <svg class="fact-icon-svg" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         <div class="fact-number" data-symbol="true">&#x221e;</div>
         <div class="fact-label">Reasons I Love You</div>
@@ -669,7 +394,7 @@
   </div>
 </section>
 
-<!-- ═══ TIMELINE ═══ -->
+<!-- TIMELINE -->
 <section id="timeline">
   <div class="sec-wrap">
     <div class="section-tag">month by month</div>
@@ -680,24 +405,18 @@
     <div class="timeline-outer">
       <div class="timeline-spine"></div>
 
-      <!-- MONTH 0 -->
+      <!-- MONTH 0 — march.jpg ✅ FIXED -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 0</div>
-          <!--
-            ✏️ PHOTO + SONG: Replace the <div class="month-placeholder-inner"> with:
-            <img class="month-photo" src="photos/jan.jpg" alt="January">
-            Also set data-song, data-title, data-artist on the <a> below.
-          -->
           <a class="photo-link" href="#" data-song="music/jan.mp3" data-title="Song Title Here" data-artist="Artist Name" onclick="return false;">
-            <div class="month-photo" src="photos/march.jpg" alt="march""><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
+            <img class="month-photo" src="photos/march.jpg" alt="March">
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
           <div class="now-playing" id="np-1"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="1">Stop</button></div>
         </div>
         <div class="month-dot"></div>
         <div class="month-text">
-          <!-- ✏️ EDIT: month number, name, story and tags -->
           <p class="month-num">0 &middot; March</p>
           <h3 class="month-name">It All Starts</h3>
           <p class="month-story">After a good amount of crying, begging, I love you, I love you not It finally Starts</p>
@@ -705,12 +424,12 @@
         </div>
       </div>
 
-      <!-- MONTH 01 -->
+      <!-- MONTH 01 — april.jpg ✅ FIXED -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 01</div>
           <a class="photo-link" href="#" data-song="music/feb.mp3" data-title="Song Title Here" data-artist="Artist Name" onclick="return false;">
-            <div class="month-photo" src="photos/april.jpg" alt="april"><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
+            <img class="month-photo" src="photos/april.jpg" alt="April">
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
           <div class="now-playing" id="np-2"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="2">Stop</button></div>
@@ -719,17 +438,17 @@
         <div class="month-text">
           <p class="month-num">01 &middot; April</p>
           <h3 class="month-name">LOVE LOVE LOVE</h3>
-          <p class="month-story">Both of us though we would be done by the end of this month if I am being honest with you baby</p>
+          <p class="month-story">Both of us thought we would be done by the end of this month if I am being honest with you baby</p>
           <div class="month-tags"><span class="month-tag tag-song">Song Title Here</span><span class="month-tag tag-mood">Sweet</span></div>
         </div>
       </div>
 
-      <!-- MONTH 02 -->
+      <!-- MONTH 02 — may.jpg ✅ FIXED -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 02</div>
           <a class="photo-link" href="#" data-song="music/mar.mp3" data-title="Song Title Here" data-artist="Artist Name" onclick="return false;">
-            <div class="month-photo" src="photos/may.jpg" alt="may"><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
+            <img class="month-photo" src="photos/may.jpg" alt="May">
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
           <div class="now-playing" id="np-3"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="3">Stop</button></div>
@@ -738,17 +457,17 @@
         <div class="month-text">
           <p class="month-num">02 &middot; May</p>
           <h3 class="month-name">Growing Together</h3>
-          <p class="month-story">Oh the Fights, this is when I truly started dissapointing you, I am going to take this moment to thank you for forgiving me so much</p>
+          <p class="month-story">Oh the Fights, this is when I truly started disappointing you, I am going to take this moment to thank you for forgiving me so much</p>
           <div class="month-tags"><span class="month-tag tag-song">Song Title Here</span><span class="month-tag tag-mood">New</span></div>
         </div>
       </div>
 
-      <!-- MONTH 03 -->
+      <!-- MONTH 03 — june.jpg ✅ FIXED -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 03</div>
           <a class="photo-link" href="#" data-song="music/apr.mp3" data-title="Song Title Here" data-artist="Artist Name" onclick="return false;">
-            <div class="month-photo" src="photos/june.jpg" alt="June"><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
+            <img class="month-photo" src="photos/june.jpg" alt="June">
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
           <div class="now-playing" id="np-4"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="4">Stop</button></div>
@@ -757,17 +476,17 @@
         <div class="month-text">
           <p class="month-num">03 &middot; June</p>
           <h3 class="month-name">More Fights</h3>
-          <p class="month-story">Every week we would find a way to piss eachother off (more me than you) but even through all of that end of the day we found a way to get back to eachother </p>
+          <p class="month-story">Every week we would find a way to piss each other off (more me than you) but even through all of that end of the day we found a way to get back to each other</p>
           <div class="month-tags"><span class="month-tag tag-song">Song Title Here</span><span class="month-tag tag-mood">Explore</span></div>
         </div>
       </div>
 
-      <!-- MONTH 04 -->
+      <!-- MONTH 04 — july.jpg ✅ FIXED -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 04</div>
           <a class="photo-link" href="#" data-song="music/may.mp3" data-title="Song Title Here" data-artist="Artist Name" onclick="return false;">
-            <div class="month-photo" src="photos/july.jpg" alt="july"><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
+            <img class="month-photo" src="photos/july.jpg" alt="July">
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
           <div class="now-playing" id="np-5"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="5">Stop</button></div>
@@ -776,17 +495,17 @@
         <div class="month-text">
           <p class="month-num">04 &middot; July</p>
           <h3 class="month-name">7/7</h3>
-          <p class="month-story">For the first time we drop our guards, completely trust eachother while we take a sweet little trip to the moon</p>
+          <p class="month-story">For the first time we drop our guards, completely trust each other while we take a sweet little trip to the moon</p>
           <div class="month-tags"><span class="month-tag tag-song">Song Title Here</span><span class="month-tag tag-mood">Joyful</span></div>
         </div>
       </div>
 
-      <!-- MONTH 05 -->
+      <!-- MONTH 05 — august.jpg ✅ FIXED -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 05</div>
           <a class="photo-link" href="#" data-song="music/jun.mp3" data-title="Song Title Here" data-artist="Artist Name" onclick="return false;">
-            <div class="month-photo" src="photos/august.jpg" alt="august""><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
+            <img class="month-photo" src="photos/august.jpg" alt="August">
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
           <div class="now-playing" id="np-6"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="6">Stop</button></div>
@@ -800,12 +519,12 @@
         </div>
       </div>
 
-      <!-- MONTH 06 -->
+      <!-- MONTH 06 — september.jpg ✅ FIXED -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 06</div>
           <a class="photo-link" href="#" data-song="music/jul.mp3" data-title="Song Title Here" data-artist="Artist Name" onclick="return false;">
-            <div class="month-photo" src="photos/september.jpg" alt="september""><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
+            <img class="month-photo" src="photos/september.jpg" alt="September">
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
           <div class="now-playing" id="np-7"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="7">Stop</button></div>
@@ -814,17 +533,17 @@
         <div class="month-text">
           <p class="month-num">06 &middot; September</p>
           <h3 class="month-name">My Besto Friendo</h3>
-          <p class="month-story">Things got a lot more stable by this point, I am greatfull that by this point we were not just dating but also became really close friends</p>
+          <p class="month-story">Things got a lot more stable by this point, I am grateful that by this point we were not just dating but also became really close friends</p>
           <div class="month-tags"><span class="month-tag tag-song">Song Title Here</span><span class="month-tag tag-mood">Sunny</span></div>
         </div>
       </div>
 
-      <!-- MONTH 07 -->
+      <!-- MONTH 07 — october.jpg ✅ FIXED -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 07</div>
           <a class="photo-link" href="#" data-song="music/aug.mp3" data-title="Song Title Here" data-artist="Artist Name" onclick="return false;">
-            <div class="month-photo" src="photos/october.jpg" alt="october""><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
+            <img class="month-photo" src="photos/october.jpg" alt="October">
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
           <div class="now-playing" id="np-8"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="8">Stop</button></div>
@@ -833,17 +552,17 @@
         <div class="month-text">
           <p class="month-num">07 &middot; October</p>
           <h3 class="month-name">Feeling Ecstatic</h3>
-          <p class="month-story">Both of us could not believe it was Oct already, time passes by so quickly with you, its like I am on Ecstacy everyday</p>
+          <p class="month-story">Both of us could not believe it was Oct already, time passes by so quickly with you, its like I am on Ecstasy everyday</p>
           <div class="month-tags"><span class="month-tag tag-song">Song Title Here</span><span class="month-tag tag-mood">Warm</span></div>
         </div>
       </div>
 
-      <!-- MONTH 08 -->
+      <!-- MONTH 08 — november.jpg ✅ FIXED -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 08</div>
           <a class="photo-link" href="#" data-song="music/sep.mp3" data-title="Song Title Here" data-artist="Artist Name" onclick="return false;">
-            <div class="month-photo" src="photos/november.jpg" alt="november""><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
+            <img class="month-photo" src="photos/november.jpg" alt="November">
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
           <div class="now-playing" id="np-9"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="9">Stop</button></div>
@@ -857,12 +576,12 @@
         </div>
       </div>
 
-      <!-- MONTH 09 -->
+      <!-- MONTH 09 — december.jpg ✅ FIXED -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 09</div>
           <a class="photo-link" href="#" data-song="music/oct.mp3" data-title="Song Title Here" data-artist="Artist Name" onclick="return false;">
-            <div class="month-photo" src="photos/december.jpg" alt="december""><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
+            <img class="month-photo" src="photos/december.jpg" alt="December">
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
           <div class="now-playing" id="np-10"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="10">Stop</button></div>
@@ -876,12 +595,12 @@
         </div>
       </div>
 
-      <!-- MONTH 10 -->
+      <!-- MONTH 10 — jan.jpg ✅ FIXED -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 10</div>
           <a class="photo-link" href="#" data-song="music/nov.mp3" data-title="Song Title Here" data-artist="Artist Name" onclick="return false;">
-            <div class="month-photo" src="photos/jan.jpg" alt="January"><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
+            <img class="month-photo" src="photos/jan.jpg" alt="January">
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
           <div class="now-playing" id="np-11"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="11">Stop</button></div>
@@ -894,7 +613,8 @@
           <div class="month-tags"><span class="month-tag tag-song">Song Title Here</span><span class="month-tag tag-mood">Grateful</span></div>
         </div>
       </div>
-      <!-- MONTH 12 -->
+
+      <!-- MONTH 11 — placeholder (no photo yet) -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 11</div>
@@ -908,11 +628,12 @@
         <div class="month-text">
           <p class="month-num">11 &middot; February</p>
           <h3 class="month-name">Enjoying the Downer</h3>
-          <p class="month-story">We can enjoy every moment with eachother UP or DOWN does not matter </p>
+          <p class="month-story">We can enjoy every moment with each other UP or DOWN does not matter</p>
           <div class="month-tags"><span class="month-tag tag-song">Song Title Here</span><span class="month-tag tag-mood">Everything</span></div>
         </div>
       </div>
-      <!-- MONTH 12 -->
+
+      <!-- MONTH 12 — placeholder (no photo yet) -->
       <div class="month-card">
         <div class="month-media">
           <div class="month-badge">Month 12</div>
@@ -920,13 +641,13 @@
             <div class="month-placeholder-inner"><div class="cam-icon"><div class="cam-lens"></div></div><p>Add your photo</p></div>
             <div class="play-overlay"><div class="play-btn"><div class="play-triangle"></div></div></div>
           </a>
-          <div class="now-playing" id="np-12"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="12">Stop</button></div>
+          <div class="now-playing" id="np-13"><div class="np-dot"></div><span class="np-text">Song Title Here</span><button class="np-stop" data-month="13">Stop</button></div>
         </div>
         <div class="month-dot"></div>
         <div class="month-text">
           <p class="month-num">12 &middot; March</p>
           <h3 class="month-name">One Whole Year!</h3>
-          <p class="month-story">A full lap around the sun with my favourite person, I am greatful for you, Cheers to this one and MANY MANY MANY MORE </p>
+          <p class="month-story">A full lap around the sun with my favourite person, I am grateful for you, Cheers to this one and MANY MANY MANY MORE</p>
           <div class="month-tags"><span class="month-tag tag-song">Song Title Here</span><span class="month-tag tag-mood">Everything</span></div>
         </div>
       </div>
@@ -935,14 +656,13 @@
   </div>
 </section>
 
-<!-- ═══ LETTERS ═══ -->
+<!-- LETTERS -->
 <section id="letters">
   <div class="sec-wrap">
     <div class="section-tag">from the heart</div>
     <h2 class="section-title">Love <span class="pop">Letters</span></h2>
     <div class="squiggle"></div>
     <div class="letters-wrap">
-      <!-- ✏️ EDIT: Replace letter-body text with your own words for each letter -->
       <div class="letter-card">
         <div class="letter-deco"></div>
         <p class="letter-from">a letter to you</p>
@@ -965,7 +685,7 @@
   </div>
 </section>
 
-<!-- ═══ CLOSING ═══ -->
+<!-- CLOSING -->
 <section id="closing">
   <h2 class="closing-title">Here's to forever,<br>one year at a time</h2>
   <p class="closing-sub">Happy Anniversary, my love</p>
@@ -975,7 +695,7 @@
 <audio id="main-audio"></audio>
 
 <script>
-/* ── Custom cursor ── */
+/* ── Cursor ── */
 const curEl  = document.getElementById('cursor');
 const ringEl = document.getElementById('cursor-ring');
 let mx=0,my=0,rx=0,ry=0;
@@ -986,52 +706,39 @@ document.querySelectorAll('a,button,.fact-card,nav a').forEach(el=>{
   el.addEventListener('mouseleave',()=>{ curEl.style.width='13px'; curEl.style.height='13px'; curEl.style.background='#f472a8'; ringEl.style.width='36px'; ringEl.style.height='36px'; });
 });
 
-/* ── Photo → Song player ── */
+/* ── Photo → Song ── */
 const audio = document.getElementById('main-audio');
 let activeMonth = null;
-
-function stopAll() {
-  audio.pause(); audio.src = '';
-  document.querySelectorAll('.now-playing').forEach(el => el.classList.remove('active'));
-  activeMonth = null;
-}
-
-document.querySelectorAll('.photo-link').forEach((link, idx) => {
-  const month = idx + 1;
-  const npEl  = document.getElementById('np-' + month);
-
-  link.addEventListener('click', e => {
+function stopAll(){ audio.pause(); audio.src=''; document.querySelectorAll('.now-playing').forEach(el=>el.classList.remove('active')); activeMonth=null; }
+document.querySelectorAll('.photo-link').forEach((link,idx)=>{
+  const month=idx+1;
+  const npEl=document.getElementById('np-'+month);
+  link.addEventListener('click',e=>{
     e.preventDefault();
-    if (activeMonth === month) { stopAll(); return; }
+    if(activeMonth===month){ stopAll(); return; }
     stopAll();
-    audio.src = link.dataset.song;
+    audio.src=link.dataset.song;
     audio.play().catch(()=>{});
-    activeMonth = month;
-    if (npEl) {
-      npEl.querySelector('.np-text').textContent = link.dataset.title || 'Now Playing';
-      npEl.classList.add('active');
-    }
+    activeMonth=month;
+    if(npEl){ npEl.querySelector('.np-text').textContent=link.dataset.title||'Now Playing'; npEl.classList.add('active'); }
   });
 });
-
-document.querySelectorAll('.np-stop').forEach(btn => {
-  btn.addEventListener('click', e => { e.stopPropagation(); stopAll(); });
-});
-audio.addEventListener('ended', stopAll);
+document.querySelectorAll('.np-stop').forEach(btn=>btn.addEventListener('click',e=>{ e.stopPropagation(); stopAll(); }));
+audio.addEventListener('ended',stopAll);
 
 /* ── Scroll reveal + counters ── */
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
     e.target.classList.add('visible');
-    e.target.querySelectorAll('.fact-number[data-target]').forEach(el => {
-      const target = parseInt(el.dataset.target); if (isNaN(target)) return;
+    e.target.querySelectorAll('.fact-number[data-target]').forEach(el=>{
+      const target=parseInt(el.dataset.target); if(isNaN(target)) return;
       let f=0; const steps=90;
       const t=setInterval(()=>{ f++; el.textContent=Math.round(target*(f/steps)).toLocaleString(); if(f>=steps){el.textContent=target.toLocaleString();clearInterval(t);} },16);
     });
     io.unobserve(e.target);
   });
-},{ threshold:.14 });
+},{threshold:.14});
 document.querySelectorAll('.month-card,.letter-card,.fact-card').forEach(el=>io.observe(el));
 
 /* ── Active nav ── */
@@ -1046,10 +753,7 @@ const canvas=document.getElementById('particle-canvas');
 const ctx=canvas.getContext('2d');
 let W,H; const resize=()=>{W=canvas.width=innerWidth;H=canvas.height=innerHeight;}; resize(); addEventListener('resize',resize);
 const COLS=['#f9a8c9','#f472a8','#e8a020','#f5c842','#ffd6e8','#fef3c7'];
-function mkP(){
-  const type=['circle','ring','diamond','star'][Math.random()*4|0];
-  return{x:Math.random()*W,y:H+20,type,col:COLS[Math.random()*COLS.length|0],size:5+Math.random()*13,speed:.28+Math.random()*.8,drift:(Math.random()-.5)*.65,rot:Math.random()*Math.PI*2,rotSpeed:(Math.random()-.5)*.04,alpha:.35+Math.random()*.45,life:1,decay:.001+Math.random()*.0013};
-}
+function mkP(){ const type=['circle','ring','diamond','star'][Math.random()*4|0]; return{x:Math.random()*W,y:H+20,type,col:COLS[Math.random()*COLS.length|0],size:5+Math.random()*13,speed:.28+Math.random()*.8,drift:(Math.random()-.5)*.65,rot:Math.random()*Math.PI*2,rotSpeed:(Math.random()-.5)*.04,alpha:.35+Math.random()*.45,life:1,decay:.001+Math.random()*.0013}; }
 function drawStar(x,y,r){const pts=5,step=Math.PI/pts;ctx.beginPath();for(let i=0;i<pts*2;i++){const rad=i%2===0?r:r*.42,a=i*step-Math.PI/2;i===0?ctx.moveTo(x+rad*Math.cos(a),y+rad*Math.sin(a)):ctx.lineTo(x+rad*Math.cos(a),y+rad*Math.sin(a));}ctx.closePath();}
 const particles=[];
 for(let i=0;i<28;i++){const p=mkP();p.y=Math.random()*H;particles.push(p);}
